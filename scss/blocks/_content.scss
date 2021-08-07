@@ -1,0 +1,82 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.button {
+  min-width: 100px;
+  padding: 5px 10px;
+  // width: 100px;
+  // white-space: nowrap;
+  background-color: blue;
+  border-radius: 8px;
+  color: white;
+}
+
+.box {
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  overflow-x: scroll;
+
+  &__item {
+    width: 200px;
+    border: 1px solid darkblue;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.text {
+  // max-width: 200px;
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+  // overflow: hidden;
+  max-height: 200px;
+  width: 200px;
+  background-color: yellow;
+  padding: 10px;
+  overflow-x: auto;
+
+  &--open {
+    max-height: unset;
+  }
+}
+
+
+// Desktop first
+@media only screen and (max-width: 1000px) {
+
+  .box__item {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    background-color: red;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .box__item {
+    margin-bottom: 15px;
+  }
+}
